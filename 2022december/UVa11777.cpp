@@ -20,12 +20,12 @@ int main(){
         for(int j = 0; j < 7; j++){
             sum += info[i][j];
         }
-        sort(&info[i][4], &info[i][6]);
+        sort(info[i]+4, info[i]+7);
         sum -= info[i][4];
         info[i][4] = (info[i][5] + info[i][6]) / 2;
         sum -= info[i][4];
         if(sum >= 90){
-            printf("Case %d: A\n", i+1);
+            printf("Case %d: A\n", i+1); 
         }else if(sum >= 80 && sum != 90){
             printf("Case %d: B\n", i+1);
         }else if(sum >= 70 && sum != 80){
@@ -39,6 +39,9 @@ int main(){
     }
     return 0;
 }
+/*
+盡量用加法 用減法有可能會少減掉被捨去的小數 導致錯誤 96 - 16 = 80 (B), 96 - 16.5 = 79.5 = 79 (C)
+*/
 
 /*
 #include <cstdio>

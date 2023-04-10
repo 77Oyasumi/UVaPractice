@@ -1,6 +1,8 @@
+/*
 #include <stdio.h>
 #include <string.h>
 #include <stdlib.h>
+
 
 //提供比較函數給 qsort 使用
 int comp(const void *a, const void *b){
@@ -10,7 +12,7 @@ int comp(const void *a, const void *b){
 int main(){
     int n, i, j, k;
     char dict[2000][80];
-    scanf("%d\n, &n");
+    scanf("%d\n", &n);
     for(i = 0; i<n; i++){
         //讀入第i個字串
         gets(dict[i]);
@@ -36,5 +38,31 @@ int main(){
     }
     // 輸出最後一個國家與人數
     printf("%s %d\n", dict[k], i - k);
+    return 0;
+}
+*/
+
+#include <bits/stdc++.h>
+
+using namespace std;
+
+int main(){
+
+    int n;
+    string str;
+    map<string, int> mp;
+
+    cin >> n;
+
+    while(n--){
+        cin >> str;
+        mp[str]++;
+        getline(cin, str);
+    }
+
+    for(auto i: mp){
+        cout << i.first << " " << i.second << endl;
+    }
+
     return 0;
 }

@@ -3,6 +3,7 @@
 
 # Unignore files with specific extensions 设置你不想忽略的文件
 !*.cpp
+!*.c
 !*.txt
 !*.md
 

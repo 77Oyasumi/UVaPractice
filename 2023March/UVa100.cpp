@@ -26,9 +26,6 @@ int main(){
         printf(" %d\n", large);
     }
     return 0;
-<<<<<<< HEAD
-}
-=======
 }
 
 
@@ -64,4 +61,3 @@ int main() {
 }
 
 */
->>>>>>> 0218c9005c1aae5faa1e28d42d62bf26b7e0047e

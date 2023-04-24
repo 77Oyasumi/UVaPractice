@@ -18,21 +18,27 @@ int main(){
 
         sort(L, L+n);
 
-        // "0LL"的作用是初始化變量"ans"為0，同時指定變量類型為"long long"
-        long long ans = 0LL, pow;
+        int i, j, k;
 
-        for(int i = n-1; i >= 0; --i){
-            pow = 2LL;
-            for(int j = n; j > i; --j){
-                pow = pow*L[i];
+        long long sum = 0, flag = 0, tmp;
+
+        for(i = n-1, j = 1; i >= 0; i--, j++) {
+            tmp = 1;
+            for(k = 1; k <= j; k++) {
+                tmp *= L[i];
+                if(sum + 2*tmp > 5000000) {
+                    flag = 1;
+                    break;
+                }
             }
-            ans += pow;
+            
+            if(flag)    break;
+            sum += 2*tmp;
         }
-        if ( ans > 5000000){
-            printf("Too expensive\n");
-        }else{
-            printf("%lld\n", ans);
-        }
+        if(flag)
+            puts("Too expensive");
+        else
+            printf("%lld\n", sum);
     }
     return 0;
 }

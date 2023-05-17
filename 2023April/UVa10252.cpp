@@ -1,3 +1,16 @@
+// 兩個為一組
+// pretty
+// women
+// walking
+// down
+// the
+// street
+
+// 照字母順序輸出一樣的
+// e
+// nw
+// et
+
 #include <iostream>
 #include <stdio.h>
 #include <cstring>

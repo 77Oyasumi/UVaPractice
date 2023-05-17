@@ -21,10 +21,11 @@
 
 using namespace std;
 
-int fa[100];
-int thesize[100];
+const int MAXN = 100005;
+int fa[MAXN];
+int thesize[MAXN];
 
-void init(){
+void init(int n){
     for(int i = 0; i < 100; i++){
         fa[i] = i;
         thesize[i] = 1;
@@ -48,4 +49,42 @@ void unite(int x, int y){
         fa[x] = y;
         thesize[y] += thesize[x];
     }
+}
+
+int main(){
+    int t, n;
+    cin >> t;
+    while(t--){
+        cin >> n;
+        cin.ignore();
+        string line;
+        init(n);
+        char ch;
+        int x, y;
+        int a = 0, b = 0;
+        while(getline(cin, line)){
+            if(line.size() == 0){
+                break;
+            }
+
+            stringstream ss(line);
+
+            ss >> ch >> x >> y;
+
+            if(ch == 'c'){
+                unite(x, y);
+            }else{
+                if(findr(x) == findr(y)){
+                    a++;
+                }else{
+                    b++;
+                }
+            }
+        }
+        cout << a << "," << b <<"\n";
+        if(t){
+            cout<<"\n";
+        }
+    }
+    return 0;
 }
